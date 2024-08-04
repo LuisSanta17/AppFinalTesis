@@ -343,27 +343,6 @@ fun MainScreen(
                     }
                 }
                 Spacer(modifier = Modifier.height(8.dp))
-                Text(text = "Intensidad: $intensity", modifier = Modifier.padding(bottom = 8.dp))
-                Slider(
-                    value = intensity.toFloat(),
-                    onValueChange = { onIntensityChange(it.toInt()) },
-                    valueRange = 1f..19f,
-                    steps = 18,
-                    modifier = Modifier.fillMaxWidth()
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                Button(
-                    onClick = onSendIntensity,
-                    colors = ButtonDefaults.buttonColors(containerColor = LightGreen),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(50.dp)
-                ) {
-                    Icon(Icons.Filled.Send, contentDescription = "Enviar Intensidad")
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text(text = "Enviar Intensidad")
-                }
-                Spacer(modifier = Modifier.height(8.dp))
                 Text(text = "Modo: $currentMode", modifier = Modifier.padding(bottom = 8.dp))
                 Slider(
                     value = currentMode.toFloat(),
@@ -383,6 +362,27 @@ fun MainScreen(
                     Icon(Icons.Filled.Send, contentDescription = "Enviar Modo")
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(text = "Enviar Modo")
+                }
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(text = "Intensidad: $intensity", modifier = Modifier.padding(bottom = 8.dp))
+                Slider(
+                    value = intensity.toFloat(),
+                    onValueChange = { onIntensityChange(it.toInt()) },
+                    valueRange = 1f..19f,
+                    steps = 18,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Button(
+                    onClick = onSendIntensity,
+                    colors = ButtonDefaults.buttonColors(containerColor = LightGreen),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp)
+                ) {
+                    Icon(Icons.Filled.Send, contentDescription = "Enviar Intensidad")
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(text = "Enviar Intensidad")
                 }
             }
         }
